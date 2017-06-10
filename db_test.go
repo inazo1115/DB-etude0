@@ -25,7 +25,7 @@ func TestGetAndPut(t *testing.T) {
 		t.Errorf(err.Error())
 	}
 	if s != "foo" {
-		t.Errorf("error")
+		t.Errorf("Get(\"aaa\") = \"%s\", want \"foo\"", s)
 	}
 
 	s, err = db.Get("bbb")
@@ -33,7 +33,7 @@ func TestGetAndPut(t *testing.T) {
 		t.Errorf(err.Error())
 	}
 	if s != "bar" {
-		t.Errorf("error")
+		t.Errorf("Get(\"bbb\") = \"%s\", want \"bar\"", s)
 	}
 }
 
@@ -58,7 +58,7 @@ func TestMoreGetAndPut(t *testing.T) {
 			t.Errorf(err.Error())
 		}
 		if s != value {
-			t.Errorf("error")
+			t.Errorf("Get(\"%s\") = \"%s\", want \"%s\"", key, s, value)
 		}
 	}
 }
