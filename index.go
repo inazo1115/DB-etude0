@@ -103,7 +103,7 @@ func (idx *Index) Put(key string, value string) error {
 			return err
 		}
 		if rec.Key() == key {
-			// TODO: rogical delete
+			// TODO: logical delete
 			return fmt.Errorf("already exists: " + rec.String())
 		}
 	}
